@@ -1,0 +1,23 @@
+<form id="formAccount" [formGroup]="form">
+    <div>
+        <label for="name">Name: </label>
+        <input formControlName="name" type="text" id="name">
+        <small *ngIf="form.controls['name'].errors && form.controls['name'].touched">Name is too short
+        </small>
+    </div>
+    <div>
+        <label for="email">Email: </label>
+        <input formControlName="email" type="email" id="email">
+        <small *ngIf="form.controls['email'].errors && form.controls['email'].touched">Email is invalid
+        </small>
+    </div>
+    <div>
+        <label for="message">Message: </label>
+        <input formControlName="message" type="text" id="message">
+        <small *ngIf="form.controls['message'].errors && form.controls['message'].touched">Message is invalid
+        </small>
+    </div>
+    <div>
+        <button onsubmit="" [disabled]="form.invalid">Submit</button>
+    </div>
+</form>
